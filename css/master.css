@@ -1,0 +1,129 @@
+*{
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+  margin: 0;
+}
+body {
+  height: 100vh;
+  margin: 0;
+  background-image: url("../images/risotto-de-setas.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 14px;
+  padding: 10px 20px;
+}
+
+
+.page-header {
+  background-color: rgba(255, 255, 255, .4);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(135, 88, 62, 0.4);
+}
+.page-pretitle {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+}
+.page-title {
+  margin: 0;
+  font-family: 'Amatic SC', cursive;
+  font-size: 32px;
+  color: #996633;
+  text-align: center;
+}
+
+.page-content {
+  margin-top: 10px;
+  background-color: rgba(255, 255, 255, .4);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(135, 88, 62, 0.4);
+}
+.selection-button {
+  margin-top: 10px;
+  width: 100%;
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  color: #996633;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 3px;
+}
+.selection-button:focus {
+  outline: none;
+}
+.separation-line {
+  margin: 0;
+  border: .5px solid #996633;
+}
+.ingredient-list {
+  margin-top: 0;
+  list-style: none;
+  padding-left: 0;
+
+}
+.ingredient-item {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+}
+.ingredient-item:nth-child(2n+1) {
+  background-color: rgba(255, 255, 255, .6);
+  padding: 0;
+  padding: 10px 20px;
+}
+.items {
+  padding: 10px 5px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, .4);
+  border: 2px solid #996633;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 32px;
+  width: 70px;
+  text-align: center;
+}
+.items:focus {
+  outline: none;
+}
+.ingredient-info {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.product, .brand, .quantity {
+  margin: 0;
+}
+.product {
+  font-weight: 400;
+  font-size: 16px;
+}
+.brand {
+  font-size: 14px;
+  font-weight: 300;
+}
+.quantity {
+  font-weight: 300;
+}
+.price {
+  margin-left: auto;
+  font-size: 20px;
+}
