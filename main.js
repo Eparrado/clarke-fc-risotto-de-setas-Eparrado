@@ -1,5 +1,6 @@
 'use strict'
 
+/*Obtener y pintar la info*/
 let infoRecipe = {};
 const JSON_RECIPE = 'https://raw.githubusercontent.com/Adalab/recipes-data/master/rissoto-setas.json';
 const pageTitle = document.querySelector('.page-title');
@@ -16,7 +17,7 @@ function getInfo () {
     pageTitle.innerHTML = infoRecipe.name;
 
     for (const ingredient of infoRecipe.ingredients) {
-      ingredientList.innerHTML += `<li class="ingredient-item"><input type="checkbox" name="ingredient-selected">
+      ingredientList.innerHTML += `<li class="ingredient-item"><input type="checkbox" name="ingredient-checkbox" value="foo">
         <input type="text" name="ingredient-quantity" class="items" value="1" min="0"></input>
         <div class="ingredient-info">
           <h3 class="product">${ingredient.product}</h3>
