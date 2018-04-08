@@ -17,7 +17,7 @@ function getInfo () {
     pageTitle.innerHTML = infoRecipe.name;
 
     for (const ingredient of infoRecipe.ingredients) {
-      ingredientList.innerHTML += `<li class="ingredient-item"><input type="checkbox" name="ingredient-checkbox" value="foo">
+      ingredientList.innerHTML += `<li class="ingredient-item"><input class="checkbox-list" id="checkbox" type="checkbox" name="ingredient-checkbox" value="foo">
         <input type="text" name="ingredient-quantity" class="items" value="1" min="0"></input>
         <div class="ingredient-info">
           <h3 class="product">${ingredient.product}</h3>
@@ -31,3 +31,19 @@ function getInfo () {
 }
 
 window.onload = getInfo;
+
+/*Seleccionar y deseleccionar todos los checkbox*/
+const selectionButton = document.querySelector('.selection-button');
+
+function togleCheckAll(){
+  var checkbox = document.querySelectorAll('.checkbox-list');
+  for(let i=0; i<checkbox.length; i++){
+    if(checkbox[i].checked) {
+      checkbox[i].checked = false;
+    } else {
+      checkbox[i].checked = true;
+    }
+  }
+}
+
+selectionButton.addEventListener('click', togleCheckAll);
