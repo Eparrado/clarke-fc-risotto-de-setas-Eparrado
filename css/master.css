@@ -46,7 +46,11 @@ p {margin: 0;}
   }
 }
 
-.selection-button {
+.button-row {
+  display: flex;
+  justify-content: center;
+}
+.selection-button, .noselection-button {
   margin-top: 10px;
   width: 100%;
   background: none;
@@ -64,9 +68,11 @@ p {margin: 0;}
   cursor: pointer;
   margin-bottom: 3px;
 }
-.selection-button:focus, selection-button:target {
+.selection-button:focus, selection-button:target, .noselection-button:focus, noselection-button:target {
   outline: none;
 }
+.selection-button {text-align: right;}
+.noselection-button {text-align: left;}
 .separation-line {
   margin: 0;
   border: .5px solid #996633;

@@ -65,6 +65,7 @@ function renderShippingCost() {
    totalCostButton.innerHTML = 'Comprar ingredientes: ' + totalCostCounter;
   }
 
+
  function listenerEvents() {
 		let checkBoxList = document.querySelectorAll('.checkbox-list');
 		checkBoxList.forEach(function(checkbox){
@@ -72,18 +73,35 @@ function renderShippingCost() {
 		});
  }
 
+
+
 /*Seleccionar y deseleccionar todos los checkbox*/
 const selectionButton = document.querySelector('.selection-button');
+const noSelectionButton = document.querySelector('.noselection-button');
 
-function togleCheckAll(){
+function CheckAll(){
   const checkbox = document.querySelectorAll('.checkbox-list');
   for(let i=0; i<checkbox.length; i++){
-    if(checkbox[i].checked) {
-      checkbox[i].checked = false;
-    } else {
       checkbox[i].checked = true;
+      totalPriceCounter += parseFloat(checkbox[i].value);
+      subtotalCost.innerHTML = totalPriceCounter.toFixed(2) + ' €';
+      totalCostCounter = (totalPriceCounter + parseFloat(infoRecipe.shipping)).toFixed(2) + ' €';
+      totalCost.innerHTML = totalCostCounter;
+      totalCostButton.innerHTML = 'Comprar ingredientes: ' + totalCostCounter;
     }
-  }
 }
 
-selectionButton.addEventListener('click', togleCheckAll);
+function unCheckAll(){
+  const checkbox = document.querySelectorAll('.checkbox-list');
+  for(let i=0; i<checkbox.length; i++){
+      checkbox[i].checked = false;
+      totalPriceCounter = 0;
+      subtotalCost.innerHTML = totalPriceCounter.toFixed(2) + ' €';
+      totalCostCounter = 0;
+      totalCost.innerHTML = totalCostCounter.toFixed(2) + ' €';
+      totalCostButton.innerHTML = 'Comprar ingredientes: ' + totalCostCounter;
+    }
+}
+
+selectionButton.addEventListener('click', CheckAll);
+noSelectionButton.addEventListener('click', unCheckAll);
